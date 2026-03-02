@@ -148,11 +148,26 @@
         </div>
 
         <!-- Scroll Indicator for mobile -->
-        <div class="flex justify-center gap-1.5 mt-2 md:hidden">
-            <div class="h-1.5 w-8 bg-primary rounded-full"></div>
-            <div class="h-1.5 w-1.5 bg-slate-300 rounded-full"></div>
-            <div class="h-1.5 w-1.5 bg-slate-300 rounded-full"></div>
-            <div class="h-1.5 w-1.5 bg-slate-300 rounded-full"></div>
+        <div
+            id="indicatorDots"
+            class="flex justify-center gap-1.5 mt-2 md:hidden"
+        >
+            <div
+                class="indicator-dot h-1.5 w-8 bg-primary rounded-full transition-all duration-300"
+            >
+            </div>
+            <div
+                class="indicator-dot h-1.5 w-1.5 bg-slate-300 dark:bg-slate-800 rounded-full transition-all duration-300"
+            >
+            </div>
+            <div
+                class="indicator-dot h-1.5 w-1.5 bg-slate-300 dark:bg-slate-800 rounded-full transition-all duration-300"
+            >
+            </div>
+            <div
+                class="indicator-dot h-1.5 w-1.5 bg-slate-300 dark:bg-slate-800 rounded-full transition-all duration-300"
+            >
+            </div>
         </div>
     </div>
 </section>
@@ -171,15 +186,43 @@
     const container = document.getElementById("collectionContainer");
     const prevBtn = document.getElementById("prevBtn");
     const nextBtn = document.getElementById("nextBtn");
+    const dots = document.querySelectorAll("#indicatorDots .indicator-dot");
 
     if (container && prevBtn && nextBtn) {
-        const updateButtons = () => {
+        const updateUI = () => {
             const scrollLeft = container.scrollLeft;
             const maxScroll = container.scrollWidth - container.clientWidth;
 
-            (prevBtn as HTMLButtonElement).disabled = scrollLeft <= 10;
-            (nextBtn as HTMLButtonElement).disabled =
-                scrollLeft >= maxScroll - 10;
+            // Update buttons
+            if (prevBtn instanceof HTMLButtonElement)
+                prevBtn.disabled = scrollLeft <= 10;
+            if (nextBtn instanceof HTMLButtonElement)
+                nextBtn.disabled = scrollLeft >= maxScroll - 10;
+
+            // Update dots
+            if (dots.length > 0) {
+                const itemWidth =
+                    container.querySelector("div")?.clientWidth || 0;
+                const index = Math.round(scrollLeft / (itemWidth + 24)); // 24 is gap-6
+
+                dots.forEach((dot, i) => {
+                    if (i === index) {
+                        dot.classList.add("w-8", "bg-primary");
+                        dot.classList.remove(
+                            "w-1.5",
+                            "bg-slate-300",
+                            "dark:bg-slate-800",
+                        );
+                    } else {
+                        dot.classList.remove("w-8", "bg-primary");
+                        dot.classList.add(
+                            "w-1.5",
+                            "bg-slate-300",
+                            "dark:bg-slate-800",
+                        );
+                    }
+                });
+            }
         };
 
         nextBtn.addEventListener("click", () => {
@@ -190,8 +233,8 @@
             container.scrollBy({ left: -300, behavior: "smooth" });
         });
 
-        container.addEventListener("scroll", updateButtons);
-        window.addEventListener("resize", updateButtons);
-        updateButtons();
+        container.addEventListener("scroll", updateUI);
+        window.addEventListener("resize", updateUI);
+        updateUI();
     }
 </script>
