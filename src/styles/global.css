@@ -23,6 +23,13 @@
     text-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
+html,
+body {
+    overflow-x: hidden;
+    position: relative;
+    width: 100%;
+}
+
 html {
     scroll-behavior: smooth;
 }
