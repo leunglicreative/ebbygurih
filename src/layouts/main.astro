@@ -1,0 +1,69 @@
+---
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import FloatingContact from "../components/FloatingContact.astro";
+import "../styles/global.css";
+const {
+	title = "Hero Section - Helmet Store",
+	description = "Premium helmet collection",
+} = Astro.props;
+---
+
+<!doctype html>
+<html class="dark" lang="id">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>{title}</title>
+		<meta name="description" content={description} />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" href="/favicon.ico" />
+
+		<!-- Open Graph / Facebook -->
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content={Astro.url} />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta
+			property="og:image"
+			content={new URL("/images/hero-helmet.jpeg", Astro.url)}
+		/>
+
+		<!-- Twitter -->
+		<meta property="twitter:card" content="summary_large_image" />
+		<meta property="twitter:url" content={Astro.url} />
+		<meta property="twitter:title" content={title} />
+		<meta property="twitter:description" content={description} />
+		<meta
+			property="twitter:image"
+			content={new URL("/images/hero-helmet.jpeg", Astro.url)}
+		/>
+
+		<link
+			href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+			rel="stylesheet"
+		/>
+		<link
+			href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+			rel="stylesheet"
+		/>
+		<meta name="generator" content={Astro.generator} />
+	</head>
+	<body
+		class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 antialiased min-h-screen flex flex-col relative"
+	>
+		<!-- Background Image Layer -->
+		<div
+			class="fixed inset-0 -z-10 opacity-10 dark:opacity-20 pointer-events-none"
+			style="background-image: url('/images/bg-page.jpeg'); background-size: cover; background-position: center; filter: blur(5px);"
+		>
+		</div>
+
+		<Header />
+		<main class="grow relative z-10">
+			<slot />
+		</main>
+		<Footer />
+		<FloatingContact />
+	</body>
+</html>

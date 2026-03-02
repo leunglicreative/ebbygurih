@@ -1,0 +1,89 @@
+---
+import Button from "./Button.astro";
+---
+
+<header
+    id="main-header"
+    class="flex items-center justify-between whitespace-nowrap border-b border-solid border-slate-800 px-6 md:px-10 py-4 bg-slate-950 text-white shadow-lg sticky top-0 z-50 transition-all duration-300"
+>
+    <div class="flex items-center gap-8">
+        <div class="flex items-center gap-3 text-primary">
+            <div class="size-8">
+                <span class="material-symbols-outlined text-4xl"
+                    >sports_motorsports</span
+                >
+            </div>
+            <h2
+                class="text-white text-xl font-black leading-tight tracking-tight uppercase"
+            >
+                Ebby Gurih
+            </h2>
+        </div>
+        <!-- <nav class="hidden md:flex items-center gap-8">
+            <a
+                class="text-slate-300 hover:text-primary text-sm font-semibold transition-colors"
+                href="#">Home</a
+            >
+            <a
+                class="text-slate-300 hover:text-primary text-sm font-semibold transition-colors"
+                href="#">Gallery</a
+            >
+        </nav> -->
+    </div>
+    <div class="flex items-center gap-6">
+        <div class="flex items-center gap-2">
+            <div
+                class="w-8 h-8 rounded-full bg-green-500/10 flex items-center justify-center text-green-500"
+            >
+                <span class="material-symbols-outlined text-lg">chat</span>
+            </div>
+            <div class="flex flex-col items-end">
+                <span
+                    class="text-[9px] uppercase tracking-widest text-slate-400 font-bold leading-none"
+                    >WhatsApp</span
+                >
+                <a
+                    href="https://wa.me/6285692416936"
+                    target="_blank"
+                    class="text-xs font-bold text-white hover:text-primary transition-colors leading-tight"
+                >
+                    +6285692416936
+                </a>
+            </div>
+        </div>
+        <!-- <div class="hidden sm:flex items-center gap-2">
+            <Button
+                variant="ghost"
+                size="sm"
+                class="text-xs text-white hover:text-primary px-3"
+            >
+                Sign In
+            </Button>
+            <Button variant="primary" size="sm" class="text-xs px-4">
+                Join Now
+            </Button>
+        </div> -->
+    </div>
+</header>
+
+<script>
+    const header = document.getElementById("main-header");
+
+    window.addEventListener("scroll", () => {
+        if (window.scrollY > 10) {
+            header?.classList.add(
+                "shadow-xl",
+                "bg-slate-900/95",
+                "backdrop-blur-md",
+            );
+            header?.classList.remove("shadow-lg", "bg-slate-950");
+        } else {
+            header?.classList.remove(
+                "shadow-xl",
+                "bg-slate-900/95",
+                "backdrop-blur-md",
+            );
+            header?.classList.add("shadow-lg", "bg-slate-950");
+        }
+    });
+</script>

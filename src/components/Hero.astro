@@ -1,0 +1,102 @@
+---
+import Button from "./Button.astro";
+---
+
+<main
+    class="flex-1 flex flex-col items-center justify-center px-6 md:px-20 py-12 md:py-20"
+>
+    <div
+        class="max-w-container w-full grid grid-cols-1 lg:grid-cols-2 gap-12 items-center"
+    >
+        <div class="flex flex-col gap-8 order-2 lg:order-1">
+            <div class="flex flex-col gap-4">
+                <div
+                    class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary w-fit border border-primary/20"
+                >
+                    <span class="material-symbols-outlined text-sm"
+                        >verified</span
+                    >
+                    <span class="text-xs font-bold uppercase tracking-widest"
+                        >Premium Collection 2026</span
+                    >
+                </div>
+                <h1
+                    class="text-slate-900 dark:text-slate-100 text-5xl md:text-7xl font-black leading-[1.1] tracking-tighter"
+                >
+                    <span class="hover-zoom-text">Proteksi Maksimal,</span><br
+                    />
+                    <span class="text-primary hover-zoom-text"
+                        >Gaya Optimal</span
+                    >
+                </h1>
+                <p
+                    class="text-slate-600 dark:text-slate-400 text-lg md:text-xl leading-relaxed max-w-content-max"
+                >
+                    Temukan koleksi helm premium dengan standar keamanan
+                    internasional dan desain aerodinamis yang menunjang performa
+                    berkendara Anda.
+                </p>
+            </div>
+            <div
+                class="grid grid-cols-3 gap-8 pt-6 border-t border-slate-200 dark:border-slate-800"
+            >
+                <div class="flex flex-col">
+                    <span class="text-primary text-2xl font-bold">50+</span>
+                    <span class="text-slate-500 text-sm">Brand Global</span>
+                </div>
+                <div class="flex flex-col">
+                    <span class="text-primary text-2xl font-bold">12k+</span>
+                    <span class="text-slate-500 text-sm">Pelanggan Puas</span>
+                </div>
+                <div class="flex flex-col">
+                    <span class="text-primary text-2xl font-bold">SNELL</span>
+                    <span class="text-slate-500 text-sm"
+                        >Certified Security</span
+                    >
+                </div>
+            </div>
+        </div>
+        <div class="relative order-1 lg:order-2 group">
+            <div
+                class="absolute -top-10 -right-10 w-64 h-64 bg-primary/20 rounded-full blur-[80px] -z-10 opacity-50"
+            >
+            </div>
+            <div
+                class="absolute -bottom-10 -left-10 w-64 h-64 bg-primary/30 rounded-full blur-[80px] -z-10 opacity-30"
+            >
+            </div>
+            <div
+                class="aspect-square relative overflow-hidden rounded-3xl bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-premium"
+            >
+                <div
+                    class="absolute inset-0 bg-linear-to-tr from-background-dark/40 to-transparent z-10"
+                >
+                </div>
+                <img
+                    alt="Premium Carbon Helmet"
+                    class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                    src="/images/hero-helmet.jpeg"
+                />
+            </div>
+            <div
+                class="absolute bottom-8 left-8 z-20 bg-background-dark/80 backdrop-blur-md border border-slate-700 p-4 rounded-2xl flex items-center gap-4"
+            >
+                <div class="bg-primary/20 p-2 rounded-lg">
+                    <span class="material-symbols-outlined text-primary"
+                        >speed</span
+                    >
+                </div>
+                <div>
+                    <p
+                        class="text-slate-100 text-sm font-bold uppercase tracking-wider"
+                    >
+                        Sporty Limited Edition
+                    </p>
+                    <p class="text-slate-400 text-xs uppercase">
+                        Lightweight & Aerodynamic
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
