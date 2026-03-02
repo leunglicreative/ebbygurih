@@ -2,8 +2,7 @@
 
 @theme {
     --color-primary: #137fec;
-    --color-background-light: #f6f7f8;
-    --color-background-dark: #101922;
+    --color-background: #101922;
     --font-display: "Inter", system-ui, sans-serif;
     --radius-lg: 0.5rem;
     --radius-xl: 0.75rem;
@@ -11,7 +10,7 @@
     --radius-3xl: 2.5rem;
     --spacing-container: 1280px;
     --spacing-content-max: 540px;
-    --shadow-premium: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+    --shadow-premium: 0 20px 25px -5px rgb(0 0 0 / 0.3), 0 8px 10px -6px rgb(0 0 0 / 0.3);
 }
 
 .hover-zoom-text {
@@ -20,7 +19,7 @@
 
 .hover-zoom-text:hover {
     @apply scale-105;
-    text-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    text-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
 }
 
 html,
@@ -28,16 +27,19 @@ body {
     overflow-x: hidden;
     position: relative;
     width: 100%;
+    background-color: #101922;
+    /* Hardcoded dark background */
+    color: #f1f5f9;
+    /* slate-100 */
 }
 
 html {
     scroll-behavior: smooth;
-    color-scheme: dark;
+    color-scheme: dark !important;
 }
 
 @layer base {
     body {
-        @apply bg-background-dark dark:bg-background-dark font-display text-slate-100 dark:text-slate-100 antialiased;
-        background-color: #101922; /* Explicit fallback for Android */
+        @apply bg-background font-display antialiased;
     }
 }

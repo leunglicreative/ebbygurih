@@ -3,7 +3,7 @@
         <div class="flex items-center justify-between mb-8">
             <div>
                 <h2
-                    class="text-slate-900 dark:text-slate-100 text-3xl font-bold tracking-tight mb-2"
+                    class="text-slate-100 text-3xl font-bold tracking-tight mb-2"
                 >
                     Koleksi Unggulan
                 </h2>
@@ -16,7 +16,7 @@
             <div class="hidden md:flex gap-3">
                 <button
                     id="prevBtn"
-                    class="p-3 rounded-full border border-slate-200 dark:border-slate-800 hover:bg-slate-50 dark:hover:bg-slate-900 transition-colors flex items-center justify-center disabled:opacity-30 disabled:cursor-not-allowed group"
+                    class="p-3 rounded-full border border-slate-800 hover:bg-slate-900 transition-colors flex items-center justify-center disabled:opacity-30 disabled:cursor-not-allowed group"
                     aria-label="Previous items"
                 >
                     <span
@@ -26,7 +26,7 @@
                 </button>
                 <button
                     id="nextBtn"
-                    class="p-3 rounded-full border border-slate-200 dark:border-slate-800 hover:bg-slate-50 dark:hover:bg-slate-900 transition-colors flex items-center justify-center disabled:opacity-30 disabled:cursor-not-allowed group"
+                    class="p-3 rounded-full border border-slate-800 hover:bg-slate-900 transition-colors flex items-center justify-center disabled:opacity-30 disabled:cursor-not-allowed group"
                     aria-label="Next items"
                 >
                     <span
@@ -157,15 +157,15 @@
             >
             </div>
             <div
-                class="indicator-dot h-1.5 w-1.5 bg-slate-300 dark:bg-slate-800 rounded-full transition-all duration-300"
+                class="indicator-dot h-1.5 w-1.5 bg-slate-800 rounded-full transition-all duration-300"
             >
             </div>
             <div
-                class="indicator-dot h-1.5 w-1.5 bg-slate-300 dark:bg-slate-800 rounded-full transition-all duration-300"
+                class="indicator-dot h-1.5 w-1.5 bg-slate-800 rounded-full transition-all duration-300"
             >
             </div>
             <div
-                class="indicator-dot h-1.5 w-1.5 bg-slate-300 dark:bg-slate-800 rounded-full transition-all duration-300"
+                class="indicator-dot h-1.5 w-1.5 bg-slate-800 rounded-full transition-all duration-300"
             >
             </div>
         </div>
@@ -215,11 +215,7 @@
                         );
                     } else {
                         dot.classList.remove("w-8", "bg-primary");
-                        dot.classList.add(
-                            "w-1.5",
-                            "bg-slate-300",
-                            "dark:bg-slate-800",
-                        );
+                        dot.classList.add("w-1.5", "bg-slate-800");
                     }
                 });
             }
